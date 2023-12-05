@@ -9,6 +9,7 @@ const {
   DB_PASSWORD,
   DB_HOST,
   DB_DIALECT,
+  DB_URL,
 } = process.env;
 
 // const sequelize = new Sequelize(
@@ -27,17 +28,17 @@ const remoteDB = new Sequelize(DB_URL, {
     }
   });
 
-const databaseValidation = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Success connect to database');
-  } catch (err) {
-    console.error(
-      `Unable to connect to the database: ${err}`
-    );
-  }
-};
+// const databaseValidation = async () => {
+//   try {
+//     await sequelize.authenticate();
+//     console.log('Success connect to database');
+//   } catch (err) {
+//     console.error(
+//       `Unable to connect to the database: ${err}`
+//     );
+//   }
+// };
 
 module.exports = {
-  databaseValidation, remoteDB,
+  remoteDB,
 };
