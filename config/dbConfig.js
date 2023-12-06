@@ -12,21 +12,21 @@ const {
   DB_URL,
 } = process.env;
 
-// const sequelize = new Sequelize(
-//   DB_NAME,
-//   DB_USERNAME,
-//   DB_PASSWORD,
-//   {
-//     host: DB_HOST,
-//     dialect: DB_DIALECT,
-//   }
-// );
+const sequelize = new Sequelize(
+  DB_NAME,
+  DB_USERNAME,
+  DB_PASSWORD,
+  {
+    host: DB_HOST,
+    dialect: DB_DIALECT,
+  }
+);
 
-const remoteDB = new Sequelize(DB_URL, {
-    define: {
-      timestamps: false
-    }
-  });
+// const remoteDB = new Sequelize(DB_URL, {
+//     define: {
+//       timestamps: false
+//     }
+//   });
 
 // const databaseValidation = async () => {
 //   try {
@@ -39,6 +39,6 @@ const remoteDB = new Sequelize(DB_URL, {
 //   }
 // };
 
-module.exports = {
-  remoteDB,
-};
+// module.exports = {
+//   remoteDB,
+// };
