@@ -25,5 +25,6 @@ const testDBConnection = async() => {
 module.exports = {
   testDBConnection,
   development: {
+    use_env_variable: DB_URL,
   },
 };
