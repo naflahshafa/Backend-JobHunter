@@ -13,6 +13,12 @@ const {
 } = process.env;
 
 const sequelize = new Sequelize(
+  DB_URL,
+  {
+    define: {
+      timestamps: false
+    }
+  },
   DB_NAME,
   DB_USERNAME,
   DB_PASSWORD,
@@ -22,23 +28,13 @@ const sequelize = new Sequelize(
   }
 );
 
-// const remoteDB = new Sequelize(DB_URL, {
-//     define: {
-//       timestamps: false
-//     }
-//   });
+async function testDBConnection() {
+  try {
+    await sequelize.authenticate();
+    console.log("Koneksi ke database berhasil.");
+  } catch (error) {
+    console.error("Gagal terkoneksi ke database:", error);
+  }
+}
 
-// const databaseValidation = async () => {
-//   try {
-//     await sequelize.authenticate();
-//     console.log('Success connect to database');
-//   } catch (err) {
-//     console.error(
-//       `Unable to connect to the database: ${err}`
-//     );
-//   }
-// };
-
-// module.exports = {
-//   remoteDB,
-// };
+testDBConnection();
