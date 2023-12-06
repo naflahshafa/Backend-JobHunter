@@ -10,25 +10,6 @@
 //   dialect: dialect,
 // });
 
-// const dotenv = require('dotenv');
-
-// dotenv.config();
-
-// const {
-//   DB_NAME,
-//   DB_PASSWORD,
-//   DB_USER,
-//   DB_URL
-// } = process.env
-
-// const db = new Sequelize(DB_URL, {
-//   define: {
-//     timestamps: false
-//   }
-// });
-
-// module.exports = db;
-
 // // Coba koneksi ke database
 // async function testDBConnection() {
 //   try {

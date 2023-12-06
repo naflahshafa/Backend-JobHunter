@@ -1,23 +1,26 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
-    "database": "jobhunter_dev",
-    "host": "localhost",
-    "dialect": "postgres"
+    "password": "BgDcac6aee2Ee2DEAd5FG4ECG*BaD6c*",
+    "database": "railway",
+    "host": "roundhouse.proxy.rlwy.net",
+    "dialect": "postgres",
+    "port": 15050
   },
   "test": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "BgDcac6aee2Ee2DEAd5FG4ECG*BaD6c*",
     "database": "jobhunter_test",
-    "host": "localhost",
-    "dialect": "postgres"
+    "host": "roundhouse.proxy.rlwy.net",
+    "dialect": "postgres",
+    "port": 15050
   },
   "production": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "BgDcac6aee2Ee2DEAd5FG4ECG*BaD6c*",
     "database": "jobhunter_prod",
-    "host": "localhost",
-    "dialect": "postgres"
+    "host": "roundhouse.proxy.rlwy.net",
+    "dialect": "postgres",
+    "port": 15050
   }
 }
