@@ -40,5 +40,6 @@ module.exports = {
     database: DB_NAME,
     host: DB_HOST,
     dialect: DB_DIALECT,
+    use_env_variable: DB_URL,
   },
 };
