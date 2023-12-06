@@ -4,10 +4,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const {
-  DB_URL,
+  DATABASE_URL,
 } = process.env;
 
-const sequelize = new Sequelize(DB_URL, {
+const sequelize = new Sequelize(DATABASE_URL, {
   define: {
     timestamps: false,
   },
@@ -25,7 +25,7 @@ const testDBConnection = async() => {
 module.exports = {
   testDBConnection,
   development: {
-    use_env_variable: "DB_URL",
+    use_env_variable: "DATABASE_URL",
     dialect: "DB_DIALECT",
   },
 };
