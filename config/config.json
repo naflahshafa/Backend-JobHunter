@@ -14,10 +14,10 @@
       "dialect": "postgres"
     },
     "production": {
-      "username": "freedb_naflah",
-      "password": "tdSxqQ7QCUyG9T@",
-      "database": "freedb_jobhunter",
-      "host": "sql.freedb.tech",
-      "dialect": "mysql"
+      "username": "postgres",
+      "password": "B5-FgfC-4G44e2gAf*BEB336G5G-*d4g",
+      "database": "railway",
+      "host": "roundhouse.proxy.rlwy.net",
+      "dialect": "postgres"
     }
   }
