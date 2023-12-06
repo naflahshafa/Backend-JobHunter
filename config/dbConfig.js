@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 
-dotenv.config();
+// dotenv.config();
 
 const {
   DB_NAME,
@@ -12,29 +12,33 @@ const {
   DB_URL,
 } = process.env;
 
-const sequelize = new Sequelize(
-  DB_URL,
-  {
-    define: {
-      timestamps: false
-    }
+const sequelize = new Sequelize(DB_URL, {
+  define: {
+    timestamps: false,
   },
-  DB_NAME,
-  DB_USERNAME,
-  DB_PASSWORD,
-  {
-    host: DB_HOST,
-    dialect: DB_DIALECT,
-  }
-);
+  dialect: DB_DIALECT,
+  host: DB_HOST,
+  username: DB_USERNAME,
+  password: DB_PASSWORD,
+  database: DB_NAME,
+});
 
-async function testDBConnection() {
+const testDBConnection = async() => {
   try {
     await sequelize.authenticate();
     console.log("Koneksi ke database berhasil.");
   } catch (error) {
     console.error("Gagal terkoneksi ke database:", error);
   }
-}
+};
 
-testDBConnection();
+module.exports = {
+  testDBConnection,
+  development: {
+    username: DB_USERNAME,
+    password: DB_PASSWORD,
+    database: DB_NAME,
+    host: DB_HOST,
+    dialect: DB_DIALECT,
+  },
+};
