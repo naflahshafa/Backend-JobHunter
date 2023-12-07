@@ -1,16 +1,16 @@
 {
     "development": {
       "username": "postgres",
-      "password": "postgres",
-      "database": "jobhunter_dev",
-      "host": "localhost",
+      "password": "B5-FgfC-4G44e2gAf*BEB336G5G-*d4g",
+      "database": "railway",
+      "host": "roundhouse.proxy.rlwy.net",
       "dialect": "postgres"
     },
     "test": {
       "username": "postgres",
-      "password": "postgres",
-      "database": "jobhunter_test",
-      "host": "localhost",
+      "password": "B5-FgfC-4G44e2gAf*BEB336G5G-*d4g",
+      "database": "railway",
+      "host": "roundhouse.proxy.rlwy.net",
       "dialect": "postgres"
     },
     "production": {
