@@ -14,10 +14,10 @@
       "dialect": "postgres"
     },
     "production": {
-      "username": "mbnmwybm",
-      "password": "OwXlVm2j5MpytsH-S8aBRrUues3secni",
-      "database": "mbnmwybm",
-      "host": "cornelius.db.elephantsql.com",
+      "username": "postgres",
+      "password": "B5-FgfC-4G44e2gAf*BEB336G5G-*d4g",
+      "database": "railway",
+      "host": "roundhouse.proxy.rlwy.net",
       "dialect": "postgres"
     }
   }
