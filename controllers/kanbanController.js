@@ -1,6 +1,6 @@
 const {kanban, User, Job} = require("../models");
 const { Sequelize, DataTypes, Op } = require('sequelize');
-const sequelizeConfig = require('../config/config.json');
+const sequelizeConfig = require('../config/dbConfig.js');
 const sequelize = new Sequelize(sequelizeConfig.development);
 
 module.exports = {
