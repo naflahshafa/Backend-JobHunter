@@ -38,7 +38,6 @@ module.exports = {
     try {
       const userId = parseInt(req.params.id);
       const { name, email, address, password, phone, role, about, skill } = req.body;
-      // const profil = req.file ? req.file.buffer : undefined;
   
       const existingUser = await User.findByPk(userId);
   
@@ -48,18 +47,17 @@ module.exports = {
         });
       }
   
-      // Upload gambar ke ImageKit
-      const uploadResponse = await imagekit.upload({
-        file: req.file.buffer,
-        fileName: `${Date.now()}-${req.file.originalname}`,
-      });
-  
-      const profil = uploadResponse.url;
+      const profil = req.file
+        ? (await imagekit.upload({
+            file: req.file.buffer,
+            fileName: `${Date.now()}-${req.file.originalname}`,
+          })).url
+        : existingUser.profil;
   
       // Update pengguna dengan URL gambar ImageKit
-      const updatedUser = await User.update(
+      const [updatedRowCount] = await User.update(
         {
-          profil: profil || existingUser.profil,
+          profil,
           name: name || existingUser.name,
           email: email || existingUser.email,
           address: address || existingUser.address,
@@ -74,12 +72,23 @@ module.exports = {
         }
       );
   
+      if (updatedRowCount === 0) {
+        return res.status(404).json({
+          message: `Pengguna dengan ID ${userId} tidak ditemukan atau tidak ada perubahan data.`,
+        });
+      }
+  
+      // Ambil data pengguna setelah operasi update
+      const updatedUser = await User.findByPk(userId);
+  
       res.status(200).json({
         message: `Pengguna dengan ID ${userId} berhasil diperbarui.`,
         data: updatedUser,
       });
+  
     } catch (error) {
-      res.status(500).json({ message: "Terjadi kesalahan saat mengambil data pengguna", error });
+      console.error(error);
+      res.status(500).json({ message: "Terjadi kesalahan saat mengambil data pengguna", error: error.message });
     }
 
 
