@@ -79,7 +79,7 @@ module.exports = {
         data: updatedUser,
       });
     } catch (error) {
-      res.status(500).json({ message: "Terjadi kesalahan saat mengambil data pengguna" });
+      res.status(500).json({ message: "Terjadi kesalahan saat mengambil data pengguna", error });
     }
 
 
