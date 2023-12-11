@@ -11,7 +11,7 @@ module.exports = {
       },
       profil: {
         allowNull: true,
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
       },
       name: {
         type: Sequelize.STRING,

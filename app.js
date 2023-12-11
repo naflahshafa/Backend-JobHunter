@@ -8,6 +8,11 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const routes = require("./routes/index");
 
+// const multer = require('multer');
+// const upload = require("./middleware/multer");
+// const path           = require('path')
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use(morgan("dev"));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
